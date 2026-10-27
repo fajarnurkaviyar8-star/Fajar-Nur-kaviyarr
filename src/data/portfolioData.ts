@@ -1,7 +1,4 @@
 import { ContactInfo, EducationItem, ExperienceItem, ProjectItem, SkillItem, HobbyItem } from '../types/portfolio';
-import heroPortraitImg from '../assets/images/hero_portrait_fajar_1792673812981.jpg';
-import advertisingWorkImg from '../assets/images/advertising_work_showcase_1792673813950.jpg';
-import libraryAppImg from '../assets/images/library_app_mockup_1792673814310.jpg';
 
 export const contactInfo: ContactInfo = {
   name: 'Fajar Nur Kaviyar',
@@ -21,7 +18,7 @@ export const heroBio = {
   role: 'Mahasiswa Sistem Informasi & Pengembang Pemula',
   shortSummary: 'Mahasiswa Program Studi Sistem Informasi di Universitas Komputer Majenang (UNIKMA) dengan ketertarikan mendalam pada teknologi, perancangan aplikasi desktop & basis data, serta dedikasi untuk terus belajar dan mengasah keterampilan di era digital.',
   locationBadge: 'Berdomisili di Majenang, Indonesia',
-  defaultHeroImage: heroPortraitImg,
+  defaultHeroImage: '/src/assets/images/hero_portrait_fajar_1792673812981.jpg',
 };
 
 export const educationList: EducationItem[] = [
@@ -65,7 +62,7 @@ export const experienceList: ExperienceItem[] = [
       'Mencoba membuat rancangan desain spanduk menggunakan perangkat lunak grafis CorelDRAW.',
       'Mengenal dan memahami siklus pengerjaan produk percetakan komersial dan materi promosi publik.'
     ],
-    imageSrc: advertisingWorkImg
+    imageSrc: '/src/assets/images/advertising_work_showcase_1792673813950.jpg'
   }
 ];
 
@@ -125,7 +122,7 @@ export const featuredProject: ProjectItem = {
   ],
   screenshots: [
     {
-      url: libraryAppImg,
+      url: '/src/assets/images/library_app_mockup_1792673814310.jpg',
       caption: 'Tampilan antarmuka katalog buku dan status sirkulasi transaksi peminjaman pada sistem desktop.'
     }
   ]

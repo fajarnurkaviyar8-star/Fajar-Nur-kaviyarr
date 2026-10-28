@@ -5,11 +5,13 @@ on:
     branches: ['main', 'master']
   workflow_dispatch:
 
+# Memberikan izin token GitHub untuk mempublikasikan situs ke GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Menghentikan build lama jika ada commit baru
 concurrency:
   group: 'pages'
   cancel-in-progress: true

@@ -34,13 +34,13 @@ export default function App() {
   useEffect(() => {
     try {
       const savedPhoto = localStorage.getItem('fajar_custom_photo');
-      if (savedPhoto) setCurrentPhoto(savedPhoto);
+      if (savedPhoto && !savedPhoto.startsWith('/src/assets/images/')) setCurrentPhoto(savedPhoto);
 
       const savedScreenshot = localStorage.getItem('fajar_custom_screenshot');
-      if (savedScreenshot) setCurrentScreenshot(savedScreenshot);
+      if (savedScreenshot && !savedScreenshot.startsWith('/src/assets/images/')) setCurrentScreenshot(savedScreenshot);
 
       const savedExpMulya = localStorage.getItem('fajar_custom_exp_mulya');
-      if (savedExpMulya) setCurrentExpMulya(savedExpMulya);
+      if (savedExpMulya && !savedExpMulya.startsWith('/src/assets/images/')) setCurrentExpMulya(savedExpMulya);
 
       // Bersihkan data lama dekorasi jika ada di peramban
       localStorage.removeItem('fajar_custom_exp_dekorasi');

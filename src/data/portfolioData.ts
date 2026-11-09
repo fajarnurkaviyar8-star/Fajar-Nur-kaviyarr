@@ -1,7 +1,7 @@
 import { ContactInfo, EducationItem, ExperienceItem, ProjectItem, SkillItem, HobbyItem } from '../types/portfolio';
-import heroPortraitImg from '../assets/images/hero_portrait_fajar_1792673812981.jpg';
-import libraryAppImg from '../assets/images/library_app_mockup_1792673814310.jpg';
-import advertisingWorkImg from '../assets/images/advertising_work_showcase_1792673813950.jpg';
+import heroPortraitImg from '../assets/images/fajar_profil_asli.png';
+import libraryAppImg from '../assets/images/fajar_project_perpus_asli.jpeg';
+import advertisingWorkImg from '../assets/images/fajar_pkl_asli.jpeg';
 
 export const contactInfo: ContactInfo = {
   name: 'Fajar Nur Kaviyar',
@@ -126,7 +126,7 @@ export const featuredProject: ProjectItem = {
   screenshots: [
     {
       url: libraryAppImg,
-      caption: 'Tampilan antarmuka katalog buku dan status sirkulasi transaksi peminjaman pada sistem desktop.'
+      caption: 'Tangkapan layar asli struktur basis data tabel_buku di Microsoft Access dan antarmuka input data buku di Visual Studio 2012 (Form1.vb).'
     }
   ]
 };

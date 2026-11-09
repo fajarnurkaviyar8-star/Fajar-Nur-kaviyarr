@@ -30,20 +30,26 @@ export default function App() {
     target: 'photo',
   });
 
-  // Muat gambar yang tersimpan di localStorage (jika sebelumnya sudah diubah oleh pengguna)
+  // Pastikan aset foto asli terbaru Mas Fajar langsung aktif dan membersihkan cache uji coba lama
   useEffect(() => {
     try {
-      const savedPhoto = localStorage.getItem('fajar_custom_photo');
-      if (savedPhoto && !savedPhoto.startsWith('/src/assets/images/')) setCurrentPhoto(savedPhoto);
+      const version = localStorage.getItem('fajar_asset_version');
+      if (version !== 'v2_real_assets') {
+        localStorage.removeItem('fajar_custom_photo');
+        localStorage.removeItem('fajar_custom_screenshot');
+        localStorage.removeItem('fajar_custom_exp_mulya');
+        localStorage.removeItem('fajar_custom_exp_dekorasi');
+        localStorage.setItem('fajar_asset_version', 'v2_real_assets');
+      } else {
+        const savedPhoto = localStorage.getItem('fajar_custom_photo');
+        if (savedPhoto) setCurrentPhoto(savedPhoto);
 
-      const savedScreenshot = localStorage.getItem('fajar_custom_screenshot');
-      if (savedScreenshot && !savedScreenshot.startsWith('/src/assets/images/')) setCurrentScreenshot(savedScreenshot);
+        const savedScreenshot = localStorage.getItem('fajar_custom_screenshot');
+        if (savedScreenshot) setCurrentScreenshot(savedScreenshot);
 
-      const savedExpMulya = localStorage.getItem('fajar_custom_exp_mulya');
-      if (savedExpMulya && !savedExpMulya.startsWith('/src/assets/images/')) setCurrentExpMulya(savedExpMulya);
-
-      // Bersihkan data lama dekorasi jika ada di peramban
-      localStorage.removeItem('fajar_custom_exp_dekorasi');
+        const savedExpMulya = localStorage.getItem('fajar_custom_exp_mulya');
+        if (savedExpMulya) setCurrentExpMulya(savedExpMulya);
+      }
     } catch {
       // Abaikan jika ada pembatasan localStorage
     }

@@ -142,14 +142,15 @@ export function Hero({ currentPhoto, onOpenPhotoModal, onOpenCV, onOpenChat }: H
                 {/* Gradasi pudar di bawah agar menyatu sempurna dengan latar belakang gelap */}
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0B0C10] via-[#0B0C10]/60 to-transparent pointer-events-none" />
 
-                {/* Tombol Interaktif Ganti Foto Profil */}
-                <div className="absolute bottom-3 inset-x-3 flex justify-center opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Tombol Interaktif Ganti Foto Profil (diletakkan rapi di sudut atas agar tidak menutupi wajah/badan) */}
+                <div className="absolute top-3 right-3 z-10 opacity-70 hover:opacity-100 transition-opacity">
                   <button
                     onClick={onOpenPhotoModal}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-black/75 hover:bg-black/90 backdrop-blur-md rounded-full border border-white/20 shadow-lg hover:border-white/40 transition-all"
+                    title="Ganti Foto Profil"
+                    className="inline-flex items-center gap-1 px-2.5 py-1.5 text-[11px] font-medium text-white bg-black/70 hover:bg-black/90 backdrop-blur-md rounded-full border border-white/20 shadow-md hover:border-[#FF5252]/50 transition-all"
                   >
-                    <Camera className="w-3.5 h-3.5 text-[#FF5252]" />
-                    <span>Ganti / Unggah Foto Anda</span>
+                    <Camera className="w-3 h-3 text-[#FF5252]" />
+                    <span className="hidden sm:inline">Ganti Foto</span>
                   </button>
                 </div>
               </div>
